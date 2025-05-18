@@ -5,9 +5,11 @@ import flag from '../../../src/assets/images/flag.svg.png';
 import { BsSearch } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
 import { FaShoppingCart } from "react-icons/fa";
+import LowerHeader from './LowerHeader';
 
 const Header = () => {
   return (
+    <> 
     <section className={classes.header_container}>
       <div className={classes.logo_container}>
         <a href="#">
@@ -59,7 +61,10 @@ const Header = () => {
           <span>0</span>
         </a>
       </div>
+      
     </section>
+    <LowerHeader/>
+    </>
   );
 };
 

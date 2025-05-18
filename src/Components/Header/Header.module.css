@@ -145,7 +145,140 @@
 .delivery:hover,
 .search:hover,
 .order_container > a:hover,
+.lower_container ul li:hover,
 .order_container > div:hover {
   border: 1px solid white;
   border-radius: 3px;
 }
+.lower_container{
+    background-color: #232f3e;
+    color: white;
+    position: static;
+    float: none;
+    flex: 1 1 auto;
+    flex-flow:row wrap ;
+    -webkit-box-align: end;
+    align-items: flex-end;
+}
+.lower_container ul {
+    display: flex;
+    list-style: none;
+    gap: 14px;
+}
+.lower_container ul li:first-child{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding-left: 5px;
+    white-space: nowrap;
+    font-family: inherit;
+    
+}
+.lower_container ul li{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    
+}
+
+/* @media screen and (max-width:576) {
+    .header_container{
+        display: flex;
+        flex-direction: column !important;
+        height:auto
+    }
+    .lower_container ul li:not(:first-child){
+        display: none;
+    }
+    .language {
+        display: none;
+    }
+    
+} */
+
+/* Default (desktop and above 992px) */
+/* Already styled in your base CSS */
+
+/* Medium screens (tablets, 768px - 991px) */
+@media screen and (max-width: 991px) {
+  .header_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .search {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .order_container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* Small screens (phones, 577px - 767px) */
+@media screen and (max-width: 767px) {
+  .header_container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .order_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .language {
+    display: none;
+  }
+
+  .delivery {
+    justify-content: center;
+  }
+}
+
+/* Extra small screens (phones below 576px) */
+@media screen and (max-width: 576px) {
+  .header_container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .lower_container ul li:not(:first-child) {
+    display: none;
+  }
+
+  .language {
+    display: none;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .order_container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+}
+
+
