@@ -2,10 +2,12 @@ export const categoryImage=[
     {
         title:"Electronics",
         name:"electronics",
+        category: "electronics",
         imageLink:
         "https://www.shift4shop.com/2015/images/sell-online/electronics/selling-charge-up.jpg"
 
     },
+   
 
     {
         title:"discovery fashion trends",
@@ -15,7 +17,7 @@ export const categoryImage=[
     },
 
     {
-        title:"Mens clothing",
+        title:"Mens_clothing",
         name:"mens clothings",
         imageLink:
         "https://www.axul.com/cdn/shop/collections/18_3760ca10-2427-4884-a13b-b5d9749fe97b_1024x1024.png?v=1647440489"

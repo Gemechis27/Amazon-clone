@@ -1,50 +1,34 @@
 import React from 'react';
-import classes from './Product.module.css';
+import Rating from '@mui/material/Rating';
 import CurrencyFormat from './CurrencyFormat';
+import classes from './Product.module.css';
+import { Link } from 'react-router-dom';
 
-const brandColors = {
-  Samsung: '#007AFF',   // blue
-  Xiaomi: '#FF6900',    // orange
-  Game: '#4CAF50',      // green
-  TV: '#9C27B0',        // purple
-  // add more brand-color pairs here as needed
-};
-
-const ProductCard = ({ item }) => {
-  // get color from brandColors based on brand prop
-  const brandColor = brandColors[item.brand] || '#555'; // fallback color
+const ProductCard = ({ product }) => {
+  const { image, title, id, rating, price } = product;
 
   return (
-    <div className={classes.card}>
-      <div className={classes.imageWrapper}>
-        {item.discount && (
-          <span className={classes.discountRibbon}>
-            Discount {item.discount}
-          </span>
-        )}
-        <a href="#">
-          <img className={classes.image} src={item.image} alt={item.title} />
-        </a>
-      </div>
+    <div className={classes.productCard_container}>
+      <div>
+        <Link to={`/products/${id}`}>
+          <img src={image} alt={title} />
+        </Link>
+        <div>
+          <h3>{title}</h3>
 
-      <div className={classes.content}>
-        {item.popular && (
-          <span className={classes.popularTag}>🔥 Popular</span>
-        )}
+          <div className={classes.rating}>
+            <Rating value={rating?.rate || 0} precision={0.1} readOnly />
+            <small>{rating?.count || 0}</small>
+          </div>
 
-        <h3 className={classes.title}>{item.title}</h3>
-        <h4 className={classes.model}>{item.model}</h4>
+          <div>
+            <CurrencyFormat amount={price} />
+          </div>
 
-        <h5
-          className={classes.brand}
-          style={{ color: brandColor }}
-        >
-          {item.brand}
-        </h5>
-
-        <CurrencyFormat amount={item.price} className={classes.price} />
-
-        <button className={classes.button}>Add to Cart</button>
+          <button className={classes.Button}>
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

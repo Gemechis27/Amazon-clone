@@ -1,35 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import ProductCard from './ProductCard';
 import classes from './Product.module.css';
-import { productItem } from './ProductFile';
-
-const groupByCategory = (items) => {
-  return items.reduce((acc, item) => {
-    if (item.image) { // Filter out products without images
-      (acc[item.category] = acc[item.category] || []).push(item);
-    }
-    return acc;
-  }, {});
-};
 
 const Product = () => {
-  const categorized = groupByCategory(productItem);
+  const [products, setProducts] = useState([]);     // plural for clarity
+         // optional: handle errors
+
+  useEffect(() => {
+    axios.get('https://fakestoreapi.com/products')
+      .then((response) => {
+        setProducts(response.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+        setError('Failed to fetch products.');
+        setLoading(false);
+      });
+  }, []);
+
 
   return (
-    <div className={classes.catalog}>
-      {Object.entries(categorized).map(([category, products]) => (
-        <section key={category}>
-          <h2 className={classes.categoryTitle}>{category}</h2>
-          <div className={classes.product_container}>
-            {products.map((item) => (
-              <ProductCard key={item.id} item={item} />
-            ))}
-          </div>
-        </section>
+    <section className={classes.product_container}>
+      {products.map((product) => (
+        <ProductCard product={product} key={product.id} />
       ))}
-    </div>
+    </section>
   );
 };
 
 export default Product;
-
