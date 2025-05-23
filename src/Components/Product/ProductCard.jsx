@@ -3,6 +3,8 @@ import Rating from '@mui/material/Rating';
 import CurrencyFormat from './CurrencyFormat';
 import classes from './Product.module.css';
 import { Link } from 'react-router-dom';
+import Loader from '../Loader/Loader';
+
 
 const ProductCard = ({ product }) => {
   const { image, title, id, rating, price } = product;

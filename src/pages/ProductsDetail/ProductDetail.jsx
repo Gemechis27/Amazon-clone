@@ -5,17 +5,42 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { productUrl } from '../../Api/endPoint';
 import Rating from '@mui/material/Rating';
+import Loader from '../../Components/Loader/Loader';
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get(`${productUrl}/products/${productId}`)
-      .then((res) => setProduct(res.data))
-      .catch((error) => console.log(error));
+    let ignore = false;
+
+    const fetchProduct = async () => {
+      setIsLoading(true);
+      try {
+        const res = await axios.get(`${productUrl}/products/${productId}`);
+        if (!ignore) setProduct(res.data);
+      } catch (error) {
+        if (!ignore) console.error('Error fetching product:', error);
+      } finally {
+        if (!ignore) setIsLoading(false);
+      }
+    };
+
+    fetchProduct();
+
+    return () => {
+      ignore = true;
+    };
   }, [productId]);
+
+  if (isLoading || !product) {
+    return (
+      <Layout>
+        <Loader />
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
