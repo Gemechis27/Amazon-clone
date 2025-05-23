@@ -6,15 +6,16 @@ import { BsSearch } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
 import { FaShoppingCart } from "react-icons/fa";
 import LowerHeader from './LowerHeader';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <> 
     <section className={classes.header_container}>
       <div className={classes.logo_container}>
-        <a href="#">
+        <Link to="#">
           <img src={Amazon} alt="Amazon Logo" className={classes.logo} />
-        </a>
+        </Link>
         <div className={classes.delivery}>
           <span><SlLocationPin /></span>
           <div>
@@ -42,24 +43,24 @@ const Header = () => {
           </select>
         </div>
 
-        <a href="#">
+        <Link to="/Auth">
           <div>
             <p>Sign in</p>
             <span>Account & Lists</span>
           </div>
-        </a>
+        </Link>
 
-        <a href="#">
+        <Link to="/Order">
           <div>
             <p>Returns</p>
             <span>& Orders</span>
           </div>
-        </a>
+        </Link>
 
-        <a href="/cart" className={classes.cart}>
+        <Link to="/Cart" className={classes.cart}>
           <FaShoppingCart size={35} />
           <span>0</span>
-        </a>
+        </Link>
       </div>
       
     </section>

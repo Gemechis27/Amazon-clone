@@ -1,11 +1,8 @@
-// import image1 from './img/ banner_image.jpg'
-import image2 from './img/gaming_instr.png'
-import image3 from './img/girls_backpack.png'
-import image4 from './img/person.png'
-import image5 from './img/phone1.jpg'
-import image6 from './img/shoes.png'
-import image7 from './img/ties.png'
-import image8 from './img/girls_backpack.png'
 
-export const img= [image2,image3,image4,image5,image6,image7,image8]
-    
+import img1 from './img/10001.jpg'
+import img2 from './img/10002.jpg'
+import img3 from './img/10003.jpg'
+import img4 from './img/10004.jpg'
+import img5 from './img/10005.jpg'
+
+export const img = [img1,img2,img3,img4,img5]

@@ -1,52 +1,140 @@
-.productCard_container{
-    width: 250px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    color: black;
-    text-decoration: none;
-    position: relative;
-}
-.productCard_container:hover .button{
-    display: block;
-}
-.productCard_container img {
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.Button {
-  display: none;
-  padding: 5px 10px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  background-color: rgba(254, 189, 105, 1); /* ✅ fixed rgba syntax */
-  width: 100%;
-  margin: 10px 0;
-  border-radius: 30px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.catalog {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.Button:hover {
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 40px 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.product_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+  justify-items: center;
+}
+
+.card {
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.discountRibbon {
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  background: red;
+  color: white;
+  padding: 5px 60px;
+  transform: rotate(-45deg);
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popularTag {
+  background-color: gold;
+  color: #333;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  align-self: flex-start;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  height: 40px;
+  overflow: hidden;
+}
+
+.model {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.brand {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.price {
+  font-weight: bold;
+  color: #222;
+  font-size: 1.1rem;
+}
+
+.button {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  background-color: rgba(254, 189, 105, 1);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover .button {
+  display: block;
+}
+
+.button:hover {
   background-color: #d49644;
 }
-.rating{
-    display: flex;
-    align-items: center;
-    padding: 10px 0px;
-}
-.product_container{
-    display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-    max-width: 1450px;
-    margin: 100px auto 100px auto;
-    gap: 50px;
-    justify-items: center;
-}
-.product_container section{
-    margin:0 auto
+.discountRibbon {
+  position: absolute;
+  top: 10px;
+  left: -50px;
+  background: red;
+  color: white;
+  padding: 5px 60px;
+  transform: rotate(-45deg);
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 2;
+  white-space: nowrap;
 }
