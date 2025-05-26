@@ -8,12 +8,12 @@ const CarouselEffect = () => {
   return (
     <div>
       <Carousel
-        autoPlay
-        infiniteLoop
-        showIndicators
+        autoPlay={true}
+        infiniteLoop={true}
+        showIndicators={false}
         showThumbs={false}
-        showStatus={false}
-        interval={3000}
+        
+      
       >
         {img.map((imageItem, index) => (
           <div key={index}>

@@ -3,9 +3,21 @@
   width: 350px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
-
+.category {
+  max-width: 220px;  /* reduce max width to fit 4 in screen */
+  width: 100%;
+  /* keep your other styles */
+}
+.catagory_container {
+  position: relative;
+  margin-top: -150px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  
+}
 
 .category:hover {
   transform: translateY(-5px);
@@ -60,22 +72,9 @@
 
 
 
-.catagory_container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns, flexible */
-  gap: 20px;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  
-}
 
-.category {
-  max-width: 220px;  /* reduce max width to fit 4 in screen */
-  width: 100%;
-  /* keep your other styles */
-}
+
+
 
 
 
