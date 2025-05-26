@@ -6,6 +6,7 @@ const CategoryCard = ({ data }) => {
  
   
   return (
+    <section  className={classes.blended_product_wrapper}> 
     <div className={classes.category}>
     <Link to={`category/${data.name}`}> 
         <span>
@@ -15,6 +16,7 @@ const CategoryCard = ({ data }) => {
         <p>Shop now</p>
       </Link>
     </div>
+    </section>
   );
 };
 
