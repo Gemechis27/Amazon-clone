@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classes from './Header.module.css';
 import Amazon from '../../../src/assets/images/amazon.png';
 import flag from '../../../src/assets/images/flag.svg.png';
@@ -7,10 +7,16 @@ import { SlLocationPin } from "react-icons/sl";
 import { FaShoppingCart } from "react-icons/fa";
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom';
+import { DataContext } from '../DataProvider/DataProvider';
 
 const Header = () => {
+  const[{ basket},dispatch]=useContext(DataContext)
+  
+  
+ 
+  
   return (
-    <> 
+    <section className={classes.header_all_wrapper}> 
     <section className={classes.header_container}>
       <div className={classes.logo_container}>
         <Link to="#">
@@ -59,13 +65,13 @@ const Header = () => {
 
         <Link to="/Cart" className={classes.cart}>
           <FaShoppingCart size={35} />
-          <span>0</span>
+          <span>{basket.length}</span>
         </Link>
       </div>
       
     </section>
     <LowerHeader/>
-    </>
+    </section>
   );
 };
 

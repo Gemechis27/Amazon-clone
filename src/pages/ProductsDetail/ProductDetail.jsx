@@ -47,7 +47,9 @@ const ProductDetail = () => {
       <div className={classes.product_detail}>
         <div className={classes.product_wrapper}>
           <div className={classes.product_image}>
-            <img src={product.image} alt={product.title} />
+            <img src={product.image} alt={product.title}
+            renderAdd={true}
+            />
           </div>
 
           <div className={classes.product_info}>

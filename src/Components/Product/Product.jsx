@@ -30,7 +30,9 @@ const Product = () => {
 
          <section className={classes.product_container}>
       {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
+        <ProductCard product={product} key={product.id}
+        renderAdd={true}
+        />
       ))}
     </section>
 

@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.header_all_wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+
+}
 
 .header_container {
   background-color: #1a1a1a;
@@ -181,25 +188,9 @@
     
 }
 
-/* @media screen and (max-width:576) {
-    .header_container{
-        display: flex;
-        flex-direction: column !important;
-        height:auto
-    }
-    .lower_container ul li:not(:first-child){
-        display: none;
-    }
-    .language {
-        display: none;
-    }
-    
-} */
 
-/* Default (desktop and above 992px) */
-/* Already styled in your base CSS */
 
-/* Medium screens (tablets, 768px - 991px) */
+
 @media screen and (max-width: 991px) {
   .header_container {
     flex-direction: row;
