@@ -43,7 +43,7 @@ const ProductCard = ({ product, renderAdd }) => {
           </div>
      {renderAdd && <button className={classes.Button} onClick={addToCart}>
             Add to Cart
-          </button>}
+          </button>} 
           
         </div>
       </div>

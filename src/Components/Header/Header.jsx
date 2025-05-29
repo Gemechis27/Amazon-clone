@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { DataContext } from '../DataProvider/DataProvider';
 
 const Header = () => {
-  const[{ basket},dispatch]=useContext(DataContext)
+  const[{ user,basket}, dispatch]=useContext(DataContext)
   const totalItem=basket?.reduce((amount,item)=>{
     return item.amount+amount
   },0)
@@ -22,7 +22,7 @@ const Header = () => {
     <section className={classes.header_all_wrapper}> 
     <section className={classes.header_container}>
       <div className={classes.logo_container}>
-        <Link to="#">
+        <Link to="/">
           <img src={Amazon} alt="Amazon Logo" className={classes.logo} />
         </Link>
         <div className={classes.delivery}>
@@ -53,6 +53,16 @@ const Header = () => {
         </div>
 
         <Link to="/Auth">
+          <div>
+            {
+  user ? (
+    <p>Hello {user.email?.split("@")[0]}</p>
+  ) : (
+    <p>Hello, sign in</p>
+  )
+}
+
+          </div>
           <div>
             <p>Sign in</p>
             <span>Account & Lists</span>
